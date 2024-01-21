@@ -40,7 +40,7 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w600,
-                    color: Color(0xFFFFFFFF),
+                    color: Color(0xFF020D29),
                   ),
                 ),
               ),
@@ -51,7 +51,7 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
-                    color: Color(0xFF404040),
+                    color: Color(0xFFFFFFFF),
                   ),
                 ),
               ),
@@ -59,7 +59,7 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(28),
-                  color: const Color(0xFFD8E4E8),
+                  color: const Color(0xFF586AF6),
                 ),
                 padding: const EdgeInsets.all(18),
                 alignment: Alignment.center,
@@ -75,7 +75,7 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
                               style: TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w400,
-                                color: Color(0xFF404040),
+                                color: Color(0xFFFFFFFF),
                               ),
                             ),
                             Text(
@@ -83,7 +83,7 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w600,
-                                color: Color(0xFF404040),
+                                color: Color(0xFFFFFFFF),
                               ),
                             ),
                             Text(
@@ -91,7 +91,7 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
                               style: TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w400,
-                                color: Color(0xFF404040),
+                                color: Color(0xFFFFFFFF),
                               ),
                             ),
                           ],
@@ -102,14 +102,14 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
                           style: TextStyle(
                             fontSize: 40,
                             fontWeight: FontWeight.w600,
-                            color: Color(0xFF404040),
+                            color: Color(0xFFFFFFFF),
                           ),
                         ),
                       ],
                     ),
                     const Divider(
                       thickness: 0.3,
-                      color: Color(0xFF4C7380),
+                      color: Color(0xFFFFFFFF),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -118,30 +118,31 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
                           padding: const EdgeInsets.fromLTRB(10, 6, 10, 6),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
-                              color: const Color.fromARGB(90, 255, 255, 255)),
+                              color: const Color.fromARGB(90, 8, 17, 44)),
                           child: Column(
                             children: [
                               Row(
                                 children: [
-                                  SvgPicture.asset("assets/svg/humadity.svg"),
+                                  SvgPicture.asset(
+                                      "assets/svg/temperature.svg"),
                                   const SizedBox(width: 8),
                                   const Text(
-                                    '97%',
+                                    '19°C',
                                     style: TextStyle(
                                       fontSize: 18,
                                       fontWeight: FontWeight.w600,
-                                      color: Color(0xFF404040),
+                                      color: Color(0xFFFFFFFF),
                                     ),
                                   ),
                                 ],
                               ),
                               const SizedBox(height: 6),
                               const Text(
-                                'Humadity',
+                                'Temperature',
                                 style: TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w400,
-                                  color: Color(0xFF404040),
+                                  color: Color(0xFFFFFFFF),
                                 ),
                               ),
                             ],
@@ -151,7 +152,7 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
                           padding: const EdgeInsets.fromLTRB(10, 6, 10, 6),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
-                              color: const Color.fromARGB(90, 255, 255, 255)),
+                              color: const Color.fromARGB(90, 8, 17, 44)),
                           child: Column(
                             children: [
                               Row(
@@ -163,7 +164,7 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
                                     style: TextStyle(
                                       fontSize: 18,
                                       fontWeight: FontWeight.w600,
-                                      color: Color(0xFF404040),
+                                      color: Color(0xFFFFFFFF),
                                     ),
                                   ),
                                 ],
@@ -174,7 +175,7 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
                                 style: TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w400,
-                                  color: Color(0xFF404040),
+                                  color: Color(0xFFFFFFFF),
                                 ),
                               ),
                             ],
@@ -184,30 +185,30 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
                           padding: const EdgeInsets.fromLTRB(10, 6, 10, 6),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
-                              color: const Color.fromARGB(90, 255, 255, 255)),
+                              color: const Color.fromARGB(90, 8, 17, 44)),
                           child: Column(
                             children: [
                               Row(
                                 children: [
-                                  SvgPicture.asset("assets/svg/humadity.svg"),
+                                  SvgPicture.asset("assets/svg/brightness.svg"),
                                   const SizedBox(width: 8),
                                   const Text(
-                                    '97%',
+                                    '50 lx',
                                     style: TextStyle(
                                       fontSize: 18,
                                       fontWeight: FontWeight.w600,
-                                      color: Color(0xFF404040),
+                                      color: Color(0xFFFFFFFF),
                                     ),
                                   ),
                                 ],
                               ),
                               const SizedBox(height: 6),
                               const Text(
-                                'Humadity',
+                                'Brightness',
                                 style: TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w400,
-                                  color: Color(0xFF404040),
+                                  color: Color(0xFFFFFFFF),
                                 ),
                               ),
                             ],
@@ -223,9 +224,9 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
               Container(
                 height: 60,
                 child: TabBar(
-                  indicatorColor: const Color(0xFFFFFFFF),
+                  indicatorColor: const Color(0xFF586AF6),
                   dividerColor: Colors.transparent,
-                  labelColor: const Color(0xFFFFFFFF),
+                  labelColor: const Color(0xFF586AF6),
                   controller: _tabController,
                   tabs: [
                     Tab(text: 'Temperature'),

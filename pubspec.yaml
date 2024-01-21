@@ -63,6 +63,8 @@ flutter:
    - assets/svg/start_page_background.svg
    - assets/img/human_start_page.png
    - assets/svg/humadity.svg
+   - assets/svg/temperature.svg
+   - assets/svg/brightness.svg
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

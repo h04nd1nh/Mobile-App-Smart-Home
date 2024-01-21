@@ -20,15 +20,16 @@ class _BottomTabBar extends State<BottomTabBar> {
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(16)),
-          color: Color(0xFFFFFFFF),
+          color: Color(0xFF586AF6),
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
           child: GNav(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            backgroundColor: const Color(0xFFFFFFFF),
-            tabBackgroundColor: const Color(0xFF4C7380),
-            activeColor: const Color(0xFFFFFFFF),
+            backgroundColor: const Color(0xFF586AF6),
+            tabBackgroundColor: const Color(0xFFFFFFFF),
+            color: const Color(0xFFFFFFFF),
+            activeColor: const Color(0xFF586AF6),
             padding: const EdgeInsets.all(16),
             gap: 8,
             onTabChange: (index) => {

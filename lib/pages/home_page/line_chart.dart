@@ -8,7 +8,8 @@ class LineChartPage extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(32),
         ),
-        color: const Color(0xFF4C7380),
+        color: const Color(0xFFFFFFFF),
+        shadowColor: Colors.transparent,
         child: Padding(
           padding: const EdgeInsets.only(top: 16),
           child: LineChartWidget(),
