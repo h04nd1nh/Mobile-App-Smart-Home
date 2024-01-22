@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class DevicePage extends StatefulWidget {
-  const DevicePage({super.key});
+class DataPage extends StatefulWidget {
+  const DataPage({super.key});
 
   @override
-  State<DevicePage> createState() => _DevicePage();
+  State<DataPage> createState() => _DataPage();
 }
 
-class _DevicePage extends State<DevicePage> {
+class _DataPage extends State<DataPage> {
   bool lighSwitched = false;
   String lightStatus = 'Off';
   bool fanSwitched = false;
@@ -22,7 +22,7 @@ class _DevicePage extends State<DevicePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             const Text(
-              'Device',
+              'Data',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.w700,

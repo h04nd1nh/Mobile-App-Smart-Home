@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-
 import 'package:google_nav_bar/google_nav_bar.dart';
-import '../pages/home_page/home_page.dart';
-import '../pages/device_page/device_page.dart';
+
+import 'home_page/home_page.dart';
+import 'data_page/data_page.dart';
+import 'action_page/action_page.dart';
+import 'profile_page/profile_page.dart';
 
 class BottomTabBar extends StatefulWidget {
   const BottomTabBar({super.key});
@@ -43,8 +45,16 @@ class _BottomTabBar extends State<BottomTabBar> {
                 text: 'Home',
               ),
               GButton(
+                icon: Icons.data_array,
+                text: 'Data',
+              ),
+              GButton(
                 icon: Icons.assignment_rounded,
-                text: 'Device',
+                text: 'History',
+              ),
+              GButton(
+                icon: Icons.man,
+                text: 'Profile',
               ),
             ],
           ),
@@ -54,7 +64,9 @@ class _BottomTabBar extends State<BottomTabBar> {
         index: indexPage,
         children: const [
           HomePage(),
-          DevicePage(),
+          DataPage(),
+          ActionHistoryPage(),
+          ProfilePage(),
         ],
       ),
     );
