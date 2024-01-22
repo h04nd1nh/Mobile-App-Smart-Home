@@ -77,7 +77,7 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
                             ),
                           ),
                           Text(
-                            'Dream House',
+                            'My House',
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.w600,

@@ -31,7 +31,7 @@ class StartPage extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
-                      color: Color(0xFFD8E4E8),
+                      color: Color(0xFF142348),
                     ),
                   ),
                 ),
@@ -43,7 +43,7 @@ class StartPage extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.w600,
-                      color: Color(0xFFD8E4E8),
+                      color: Color(0xFF142348),
                     ),
                   ),
                 ),
@@ -58,7 +58,7 @@ let's make your home comfortable
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w400,
-                      color: Color(0xFFD8E4E8),
+                      color: Color(0xFF142348),
                     ),
                   ),
                 ),
@@ -70,7 +70,7 @@ let's make your home comfortable
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.fromLTRB(20, 12, 20, 12),
-                      backgroundColor: const Color(0xFF9A7265),
+                      backgroundColor: const Color(0xFF586AF6),
                       fixedSize: const Size(300, 48)),
                   onPressed: () {
                     print("test");

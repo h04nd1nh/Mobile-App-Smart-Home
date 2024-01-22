@@ -49,6 +49,11 @@ class _DevicePage extends State<DevicePage> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
+                              Image.asset(
+                                'assets/img/light.png',
+                                height: 50,
+                                width: 50,
+                              ),
                               const Text(
                                 'Light',
                                 style: TextStyle(
@@ -91,7 +96,7 @@ class _DevicePage extends State<DevicePage> {
                 ),
                 const Spacer(),
                 Card(
-                  surfaceTintColor: const Color(0xFF5F56FF),
+                  color: const Color(0xFFfffefe),
                   child: InkWell(
                     onTap: () {
                       print("tapped");
@@ -107,6 +112,12 @@ class _DevicePage extends State<DevicePage> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
+                              Image.asset(
+                                'assets/gif/fan.gif',
+                                height: 55,
+                                width: 55,
+                                alignment: Alignment.topLeft,
+                              ),
                               const Text(
                                 'Fan',
                                 style: TextStyle(
@@ -152,6 +163,22 @@ class _DevicePage extends State<DevicePage> {
           ],
         ),
       ),
+    );
+  }
+
+  Widget? lightWidget() {
+    if (lighSwitched) {
+      return Image.asset(
+        'assets/img/light.img',
+        height: 125.0,
+        width: 125.0,
+      );
+    }
+
+    return Image.asset(
+      'assets/gif/light.gif',
+      height: 125.0,
+      width: 125.0,
     );
   }
 }
