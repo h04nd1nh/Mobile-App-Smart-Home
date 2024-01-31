@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../main.dart';
-import '../home_page/line_chart.dart';
 import 'package:iot/config/router.dart';
 
 class StartPage extends StatelessWidget {

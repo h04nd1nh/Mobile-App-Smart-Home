@@ -6,7 +6,7 @@ class LineChartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Card(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(32),
+          borderRadius: BorderRadius.circular(15),
         ),
         color: const Color(0xFFFFFFFF),
         shadowColor: Colors.transparent,

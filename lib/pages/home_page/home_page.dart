@@ -12,6 +12,11 @@ class HomePage extends StatefulWidget {
 class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
+  bool lighSwitched = false;
+  String lightStatus = 'Off';
+  bool fanSwitched = false;
+  String fanStatus = 'Off';
+
   @override
   void initState() {
     super.initState();
@@ -24,12 +29,50 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
   //   super.dispose();
   // }
 
+  Widget fanStatusImage() {
+    if (fanSwitched) {
+      return Image.asset(
+        'assets/gif/fan.gif',
+        height: 55,
+        width: 55,
+        alignment: Alignment.topLeft,
+      );
+    } else {
+      return Image.asset(
+        'assets/img/fan.png',
+        height: 55,
+        width: 55,
+        alignment: Alignment.topLeft,
+      );
+    }
+  }
+
+  Widget lightStatusImage() {
+    if (lighSwitched) {
+      return Image.asset(
+        'assets/gif/light.gif',
+        height: 55,
+        width: 55,
+        alignment: Alignment.topLeft,
+      );
+    } else {
+      return Image.asset(
+        'assets/img/light.png',
+        height: 55,
+        width: 55,
+        alignment: Alignment.topLeft,
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.fromLTRB(24, 50, 24, 24),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             const Align(
               alignment: Alignment.centerLeft,
@@ -56,7 +99,7 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
             const SizedBox(height: 20),
             Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(28),
+                borderRadius: BorderRadius.circular(15),
                 color: const Color(0xFF586AF6),
               ),
               padding: const EdgeInsets.all(18),
@@ -115,7 +158,7 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
                       Container(
                         padding: const EdgeInsets.fromLTRB(10, 6, 10, 6),
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(15),
                             color: const Color.fromARGB(90, 8, 17, 44)),
                         child: Column(
                           children: [
@@ -148,7 +191,7 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
                       Container(
                         padding: const EdgeInsets.fromLTRB(10, 6, 10, 6),
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(15),
                             color: const Color.fromARGB(90, 8, 17, 44)),
                         child: Column(
                           children: [
@@ -181,7 +224,7 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
                       Container(
                         padding: const EdgeInsets.fromLTRB(10, 6, 10, 6),
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(15),
                             color: const Color.fromARGB(90, 8, 17, 44)),
                         child: Column(
                           children: [
@@ -218,14 +261,14 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
             ),
 
             // TabBar
-            Container(
-              height: 60,
+            SizedBox(
+              height: 50,
               child: TabBar(
                 indicatorColor: const Color(0xFF586AF6),
                 dividerColor: Colors.transparent,
                 labelColor: const Color(0xFF586AF6),
                 controller: _tabController,
-                tabs: [
+                tabs: const [
                   Tab(text: 'Temperature'),
                   Tab(text: 'Humadity'),
                   Tab(text: 'Brightness'),
@@ -237,7 +280,7 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
               child: TabBarView(
                 controller: _tabController,
                 children: [
-                  Container(
+                  SizedBox(
                     height: 190, // Đặt chiều cao theo ý muốn
                     width: double.infinity, // Đặt chiều rộng theo ý muốn
                     child: PageView(
@@ -246,7 +289,7 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
                       ],
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     height: 190, // Đặt chiều cao theo ý muốn
                     width: double.infinity, // Đặt chiều rộng theo ý muốn
                     child: PageView(
@@ -255,7 +298,7 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
                       ],
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     height: 190, // Đặt chiều cao theo ý muốn
                     width: double.infinity, // Đặt chiều rộng theo ý muốn
                     child: PageView(
@@ -267,27 +310,148 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
                 ],
               ),
             ),
-            // Chart
-
-            // Container(
-            //   height: 190, // Đặt chiều cao theo ý muốn
-            //   width: double.infinity, // Đặt chiều rộng theo ý muốn
-            //   child: PageView(
-            //     children: const [
-            //       LineChartPage(),
-            //     ],
-            //   ),
-            // ),
-
-            // Container(
-            //   height: 190, // Đặt chiều cao theo ý muốn
-            //   width: double.infinity, // Đặt chiều rộng theo ý muốn
-            //   child: PageView(
-            //     children: const [
-            //       LineChartPage(),
-            //     ],
-            //   ),
-            // ),
+            Container(
+              margin: const EdgeInsets.only(top: 5),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  const Text(
+                    'Device',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xFF142348),
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Card(
+                        color: const Color(0xFFfffefe),
+                        child: InkWell(
+                          onTap: () {},
+                          child: Container(
+                            padding: const EdgeInsets.all(16),
+                            width: 160,
+                            height: 145,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: <Widget>[
+                                    lightStatusImage(),
+                                    Switch(
+                                      activeColor: const Color(0xFFFFFFFF),
+                                      activeTrackColor: const Color(0xFF576BF5),
+                                      inactiveTrackColor:
+                                          const Color(0xFFE4EAFF),
+                                      inactiveThumbColor:
+                                          const Color(0xFF576BF5),
+                                      value: lighSwitched,
+                                      onChanged: (value) {
+                                        setState(() {
+                                          lighSwitched = value;
+                                          if (value) {
+                                            lightStatus = 'Actived: 00:00:00';
+                                          } else {
+                                            lightStatus = 'Off';
+                                          }
+                                        });
+                                      },
+                                    ),
+                                  ],
+                                ),
+                                const Text(
+                                  'Light',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w600,
+                                    color: Color(0xFF142348),
+                                  ),
+                                ),
+                                Text(
+                                  lightStatus,
+                                  style: const TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xFF142348),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      const Spacer(),
+                      Card(
+                        color: const Color(0xFFfffefe),
+                        child: InkWell(
+                          onTap: () {
+                            print("tapped");
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.all(16),
+                            width: 160,
+                            height: 145,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: <Widget>[
+                                    fanStatusImage(),
+                                    Switch(
+                                      activeColor: const Color(0xFFFFFFFF),
+                                      activeTrackColor: const Color(0xFF576BF5),
+                                      inactiveTrackColor:
+                                          const Color(0xFFE4EAFF),
+                                      inactiveThumbColor:
+                                          const Color(0xFF576BF5),
+                                      value: fanSwitched,
+                                      onChanged: (value) {
+                                        setState(() {
+                                          fanSwitched = value;
+                                          if (value) {
+                                            fanStatus = 'Actived: 00:00:00';
+                                          } else {
+                                            fanStatus = 'Off';
+                                          }
+                                        });
+                                      },
+                                    ),
+                                  ],
+                                ),
+                                const Text(
+                                  'Fan',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w600,
+                                    color: Color(0xFF142348),
+                                  ),
+                                ),
+                                Text(
+                                  fanStatus,
+                                  style: const TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xFF142348),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
