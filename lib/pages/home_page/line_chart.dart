@@ -6,12 +6,12 @@ class LineChartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Card(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(10),
         ),
         color: const Color(0xFFFFFFFF),
         shadowColor: Colors.transparent,
         child: Padding(
-          padding: const EdgeInsets.only(top: 16),
+          padding: const EdgeInsets.fromLTRB(15, 15, 0, 15),
           child: LineChartWidget(),
         ),
       );
