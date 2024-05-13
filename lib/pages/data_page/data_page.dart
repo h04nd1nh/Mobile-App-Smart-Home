@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-
-import 'data_table_page.dart';
 
 class DataPage extends StatefulWidget {
   const DataPage({super.key});
@@ -27,67 +24,51 @@ class _DataPage extends State<DataPage> {
                 color: Color(0xFF142348),
               ),
             ),
-            Row(
-              children: [
-                Card(
-                  color: const Color(0xFFfffefe),
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const DataTablePage()),
-                      );
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.all(16),
-                      width: 160,
-                      height: 65,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            'Sensor 1',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w600,
-                              color: Color(0xFF142348),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                const Spacer(),
-                Card(
-                  color: const Color(0xFFfffefe),
-                  child: InkWell(
-                    onTap: () {
-                      print("tapped");
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.all(16),
-                      width: 160,
-                      height: 65,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            'Sensor 2',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w600,
-                              color: Color(0xFF142348),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            DataTable(columns: [
+              DataColumn(
+                label: Text('Time'),
+              ),
+              DataColumn(
+                label: Text('Temp'),
+              ),
+              DataColumn(
+                label: Text('Human'),
+              ),
+              DataColumn(
+                label: Text('Light'),
+              ),
+            ], rows: [
+              DataRow(cells: [
+                DataCell(Text('13:45')),
+                DataCell(Text('24')),
+                DataCell(Text('90 %')),
+                DataCell(Text('5600')),
+              ]),
+              DataRow(cells: [
+                DataCell(Text('13:55')),
+                DataCell(Text('24')),
+                DataCell(Text('90 %')),
+                DataCell(Text('5600')),
+              ]),
+              DataRow(cells: [
+                DataCell(Text('14:00')),
+                DataCell(Text('24')),
+                DataCell(Text('90 %')),
+                DataCell(Text('5600')),
+              ]),
+              DataRow(cells: [
+                DataCell(Text('14:05')),
+                DataCell(Text('24')),
+                DataCell(Text('90 %')),
+                DataCell(Text('5600')),
+              ]),
+              DataRow(cells: [
+                DataCell(Text('14:10')),
+                DataCell(Text('24')),
+                DataCell(Text('90 %')),
+                DataCell(Text('5600')),
+              ]),
+            ]),
           ],
         ),
       ),

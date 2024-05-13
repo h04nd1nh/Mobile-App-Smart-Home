@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 import 'line_chart.dart';
 
 class HomePage extends StatefulWidget {
@@ -22,12 +23,6 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
     super.initState();
     _tabController = TabController(length: 3, vsync: this);
   }
-
-  // @override
-  // void dispose() {
-  //   _tabController.dispose();
-  //   super.dispose();
-  // }
 
   Widget fanStatusImage() {
     if (fanSwitched) {
@@ -284,26 +279,30 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
                     height: 190, // Đặt chiều cao theo ý muốn
                     width: double.infinity, // Đặt chiều rộng theo ý muốn
                     child: PageView(
-                      children: const [
-                        LineChartPage(),
+                      children: [
+                        LineChartPage(lineChartType: 'temp'),
                       ],
                     ),
                   ),
                   SizedBox(
-                    height: 190, // Đặt chiều cao theo ý muốn
-                    width: double.infinity, // Đặt chiều rộng theo ý muốn
+                    height: 190,
+                    width: double.infinity,
                     child: PageView(
-                      children: const [
-                        LineChartPage(),
+                      children: [
+                        LineChartPage(
+                          lineChartType: 'humidity',
+                        ),
                       ],
                     ),
                   ),
                   SizedBox(
-                    height: 190, // Đặt chiều cao theo ý muốn
-                    width: double.infinity, // Đặt chiều rộng theo ý muốn
+                    height: 190,
+                    width: double.infinity,
                     child: PageView(
-                      children: const [
-                        LineChartPage(),
+                      children: [
+                        LineChartPage(
+                          lineChartType: 'light',
+                        ),
                       ],
                     ),
                   ),
