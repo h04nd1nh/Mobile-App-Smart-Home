@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -17,7 +18,41 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
   String lightStatus = 'Off';
   bool fanSwitched = false;
   String fanStatus = 'Off';
+  int temp = 19;
+  int human = 80;
+  int light = 5500;
 
+  Color tempColor(int temp) {
+    if (temp < 15) {
+      return Color(0xff0072FF);;
+    }
+    if (temp > 30) {
+      return Color(0xffFF5733);
+    }
+
+    return Color(0xff86C8FF);
+  }
+
+  Color humanColor(int human) {
+    if (temp < 30) {
+      return Color(0xffE5E5E5);;
+    }
+    if (temp > 70) {
+      return Color(0xff005C99);    }
+
+    return Color(0xff8AB6D6);
+  }
+
+  Color lightColor(int light) {
+    if (temp < 500) {
+      return Color(0xffFF5733);;
+    }
+    if (temp > 1000) {
+      return Color(0xffFFE600);
+    }
+
+    return Color(0xffFFB74D);
+  }
   @override
   void initState() {
     super.initState();
@@ -154,7 +189,8 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
                         padding: const EdgeInsets.fromLTRB(10, 6, 10, 6),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
-                            color: const Color.fromARGB(90, 8, 17, 44)),
+                            color: tempColor(temp),
+                            ),
                         child: Column(
                           children: [
                             Row(
@@ -187,7 +223,8 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
                         padding: const EdgeInsets.fromLTRB(10, 6, 10, 6),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
-                            color: const Color.fromARGB(90, 8, 17, 44)),
+                            color: humanColor(human),
+                            ),
                         child: Column(
                           children: [
                             Row(
@@ -220,7 +257,8 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
                         padding: const EdgeInsets.fromLTRB(10, 6, 10, 6),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
-                            color: const Color.fromARGB(90, 8, 17, 44)),
+                            color: lightColor(light),
+                            ),
                         child: Column(
                           children: [
                             Row(
